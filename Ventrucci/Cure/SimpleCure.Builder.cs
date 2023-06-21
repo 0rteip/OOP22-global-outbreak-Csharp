@@ -1,3 +1,4 @@
+using OOP22_global_outbreak_Csharp.Ventrucci.Cure.Priority;
 using OOP22_global_outbreak_Csharp.Ventrucci.Region;
 
 namespace OOP22_global_outbreak_Csharp.Ventrucci.Cure;
