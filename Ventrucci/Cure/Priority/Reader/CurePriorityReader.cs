@@ -27,7 +27,7 @@ namespace OOP22_global_outbreak_Csharp.Ventrucci.Cure.Priority.Reader
                     foreach (var kvp in jsonObject)
                     {
                         string key = kvp.Key;
-                        JToken value = kvp.Value;
+                        JToken value = kvp.Value!;
 
                         switch (key)
                         {
@@ -35,7 +35,7 @@ namespace OOP22_global_outbreak_Csharp.Ventrucci.Cure.Priority.Reader
                                 priorityBuilder.SetPriority(value.Value<int>());
                                 break;
                             case "description":
-                                priorityBuilder.SetDescription(value.Value<string>());
+                                priorityBuilder.SetDescription(value.Value<string>()!);
                                 break;
                             case "resourcesPercentage":
                                 priorityBuilder.SetResourcesPercentage(value.Value<float>());
@@ -55,6 +55,10 @@ namespace OOP22_global_outbreak_Csharp.Ventrucci.Cure.Priority.Reader
             catch (IOException e)
             {
                 Logger.Log(LogLevel.Warning, "Unable to read " + FILE_PATH + ":" + e);
+            }
+            catch (FormatException e)
+            {
+                Logger.Log(LogLevel.Warning, "File '" + FILE_PATH + "' format is incorect:" + e);
             }
             if (_priorities.Count == 0)
             {

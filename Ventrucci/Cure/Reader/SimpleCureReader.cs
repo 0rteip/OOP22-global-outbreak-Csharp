@@ -21,15 +21,15 @@ namespace OOP22_global_outbreak_Csharp.Ventrucci.Cure.Reader
             SimpleCure cure;
             try
             {
-                SimpleCure.Builder cureBuilder = new SimpleCure.Builder(regions, priorities);
+                SimpleCure.Builder cureBuilder = new(regions, priorities);
 
                 string jsonContent = File.ReadAllText(FILE_PATH, Encoding.UTF8);
-                JObject jsonObject = JsonConvert.DeserializeObject<JObject>(jsonContent);
+                JObject jsonObject = JsonConvert.DeserializeObject<JObject>(jsonContent) ?? new JObject();
 
-                foreach (KeyValuePair<string, JToken> entry in jsonObject)
+                foreach (KeyValuePair<string, JToken?> entry in jsonObject)
                 {
                     string key = entry.Key;
-                    JToken value = entry.Value;
+                    JToken value = entry.Value!;
 
                     switch (key)
                     {
@@ -57,7 +57,7 @@ namespace OOP22_global_outbreak_Csharp.Ventrucci.Cure.Reader
                         case "rilevantProgress":
                             if (value is JArray progs)
                             {
-                                HashSet<int> ints = new HashSet<int>();
+                                HashSet<int> ints = new();
                                 foreach (JToken numberNode in progs)
                                 {
                                     ints.Add(numberNode.Value<int>());
@@ -75,7 +75,12 @@ namespace OOP22_global_outbreak_Csharp.Ventrucci.Cure.Reader
             }
             catch (IOException e)
             {
-                Logger.Log(LogLevel.Warning, "Unable to read " + FILE_PATH + ":" + e);
+                Logger.Log(LogLevel.Warning, "Unable to read '" + FILE_PATH + "':" + e);
+                cure = new SimpleCure.Builder(regions, priorities).Build();
+            }
+            catch (FormatException e)
+            {
+                Logger.Log(LogLevel.Warning, "File '" + FILE_PATH + "' format is incorect:" + e);
                 cure = new SimpleCure.Builder(regions, priorities).Build();
             }
             return cure;
