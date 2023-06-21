@@ -1,4 +1,4 @@
-namespace OOP22_global_outbreak_Csharp.Ventrucci.Cure;
+namespace OOP22_global_outbreak_Csharp.Ventrucci.Cure.Priority;
 
 /// <summary>
 /// Priority Interface.
