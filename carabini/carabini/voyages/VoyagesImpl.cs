@@ -22,7 +22,7 @@ namespace carabini.voyages
             foreach (var elem in _sizeAndNameOfMeans)
             {
                 List<IRegion> newRegions = regions.Where(region => CheckIfMeansAreOpen(region.GetTrasmissionMeans(), elem.Key)).ToList();
-                if (newRegions.Count > 2)
+                if (newRegions.Count > 1)
                 {
                     var tuple = elem.Value;
                     for (int i = 0; i < tuple.Item1; i++)
