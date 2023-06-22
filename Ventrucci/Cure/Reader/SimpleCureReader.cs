@@ -6,14 +6,14 @@ using Newtonsoft.Json.Linq;
 using OOP22_global_outbreak_Csharp.Ventrucci.ConsoleLogger;
 using OOP22_global_outbreak_Csharp.Ventrucci.Cure.Priority;
 using OOP22_global_outbreak_Csharp.Ventrucci.Cure.Priority.Reader;
-using OOP22_global_outbreak_Csharp.Ventrucci.Region;
+using carabini.region;
 using OP22_global_outbreak_Csharp.Ventrucci.ConsoleLogger;
 
 namespace OOP22_global_outbreak_Csharp.Ventrucci.Cure.Reader
 {
     public class SimpleCureReader : ISimpleCureReader
     {
-        private const string FILE_PATH = "Ventrucci/Resources/cure.json";
+        private readonly string FILE_PATH = Path.Combine(Environment.CurrentDirectory, "cure.json");
 
         public SimpleCure GetSimpleCure(List<IRegion> regions)
         {

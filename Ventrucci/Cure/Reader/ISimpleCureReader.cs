@@ -1,4 +1,4 @@
-using OOP22_global_outbreak_Csharp.Ventrucci.Region;
+using carabini.region;
 
 namespace OOP22_global_outbreak_Csharp.Ventrucci.Cure.Reader;
 
