@@ -14,7 +14,7 @@ namespace OOP22_global_outbreak_Csharp.Ventrucci.Cure
             if (_contributions.Count == 0)
             {
                 ConsoleLogger.Logger.Log(LogLevel.Warning, "Regions list can't be empty");
-                return false;
+                // return false;
             }
             if (_priorities.Where(el => el.Priority == _currentPriority).Count() != 1)
             {
