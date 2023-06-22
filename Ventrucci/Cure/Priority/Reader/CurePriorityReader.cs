@@ -10,7 +10,7 @@ namespace OOP22_global_outbreak_Csharp.Ventrucci.Cure.Priority.Reader
     /// </summary>
     public class CurePriorityReader : IPriorityReader
     {
-        private const string FILE_PATH = "Ventrucci/Resources/priorities.json";
+        private readonly string FILE_PATH = Path.Combine("priorities.json");
 
         public List<IPriority> GetPriorities()
         {
