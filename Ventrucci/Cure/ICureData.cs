@@ -1,5 +1,5 @@
+using carabini.region;
 using OOP22_global_outbreak_Csharp.Ventrucci.Cure.Priority;
-using OOP22_global_outbreak_Csharp.Ventrucci.Region;
 
 namespace OOP22_global_outbreak_Csharp.Ventrucci.Cure;
 
@@ -21,10 +21,10 @@ public interface ICureData
     /// <summary>
     /// A list of Major Contributors.
     /// </summary>
-    List<IRegion> MajorContributors { get; }
+    List<IRegion>? MajorContributors { get; }
 
     /// <summary>
     /// The current Priority.
     /// </summary>
-    IPriority Priority { get; }
+    IPriority? Priority { get; }
 }
