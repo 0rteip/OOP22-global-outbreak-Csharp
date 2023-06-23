@@ -1,0 +1,16 @@
+[
+    {
+        "type": "Batteri",
+        "lethality": 0,
+        "infectivity": 1.00,
+        "airInfectivity": 0.01,
+        "seaInfectivity": 0.01,
+        "landInfectivity": 0.01,
+        "heatInfectivity": 0.01,
+        "coldInfectivity": 0.01,
+        "aridityInfectivity": 0.01,
+        "humidityInfectivity": 0.01,
+        "cureResistance": 1,
+        "povertyInfectivity": 0.01
+    }
+]
