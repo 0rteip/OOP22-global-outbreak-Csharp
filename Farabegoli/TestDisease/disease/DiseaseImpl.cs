@@ -43,7 +43,10 @@ namespace farabegoli.disease
             this._random = new Random();
         }
 
-        public string Name { get; set; }
+        public string Name { 
+            get { return _name; }
+            set { _name = value; }
+        }
 
         public string Type
         {
@@ -51,60 +54,17 @@ namespace farabegoli.disease
             set { _type = value; }
         }
 
-        public float Infectivity
-        {
-            get { return _infectivity; }
-        }
-
-        public float Lethality
-        {
-            get { return _lethality; }
-        }
-
-        public float AirInfectivity
-        {
-            get { return _airInfectivity; }
-        }
-
-        public float LandInfectivity
-        {
-            get { return _landInfectivity; }
-        }
-
-        public float SeaInfectivity
-        {
-            get { return _seaInfectivity; }
-        }
-
-        public float HeatInfectivity
-        {
-            get { return _heatInfectivity; }
-        }
-
-        public float ColdInfectivity
-        {
-            get { return _coldInfectivity; }
-        }
-
-        public float CureResistance
-        {
-            get { return _cureResistance; }
-        }
-
-        public float HumidityInfectivity
-        {
-            get { return _humidityInfectivity; }
-        }
-
-        public float AridityInfectivity
-        {
-            get { return _aridityInfectivity; }
-        }
-
-        public float PovertyInfectivity
-        {
-            get { return _povertyInfectivity; }
-        }
+        public float Infectivity => this._infectivity;
+        public float Lethality => this._lethality;
+        public float AirInfectivity => this._airInfectivity;
+        public float LandInfectivity => _landInfectivity;
+        public float SeaInfectivity => _seaInfectivity;
+        public float HeatInfectivity => _heatInfectivity;
+        public float ColdInfectivity => _coldInfectivity;
+        public float CureResistance => _cureResistance; 
+        public float HumidityInfectivity => _humidityInfectivity;
+        public float AridityInfectivity => _aridityInfectivity;
+        public float PovertyInfectivity => _povertyInfectivity; 
         public void UpdateInfectivity(float value)
         {
             this._infectivity = GetParameterUpdate(this._infectivity + value, "Infectivity");
