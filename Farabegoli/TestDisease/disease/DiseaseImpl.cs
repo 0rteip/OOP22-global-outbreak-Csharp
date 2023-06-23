@@ -57,14 +57,14 @@ namespace farabegoli.disease
         public float Infectivity => this._infectivity;
         public float Lethality => this._lethality;
         public float AirInfectivity => this._airInfectivity;
-        public float LandInfectivity => _landInfectivity;
-        public float SeaInfectivity => _seaInfectivity;
-        public float HeatInfectivity => _heatInfectivity;
-        public float ColdInfectivity => _coldInfectivity;
-        public float CureResistance => _cureResistance; 
-        public float HumidityInfectivity => _humidityInfectivity;
-        public float AridityInfectivity => _aridityInfectivity;
-        public float PovertyInfectivity => _povertyInfectivity; 
+        public float LandInfectivity => this._landInfectivity;
+        public float SeaInfectivity => this._seaInfectivity;
+        public float HeatInfectivity => this._heatInfectivity;
+        public float ColdInfectivity => this._coldInfectivity;
+        public float CureResistance => this._cureResistance; 
+        public float HumidityInfectivity => this._humidityInfectivity;
+        public float AridityInfectivity => this._aridityInfectivity;
+        public float PovertyInfectivity => this._povertyInfectivity; 
         public void UpdateInfectivity(float value)
         {
             this._infectivity = GetParameterUpdate(this._infectivity + value, "Infectivity");
